@@ -1,78 +1,190 @@
+/* ------------------------- */
+/* Globale indstillinger     */
+/* ------------------------- */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: white;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
 }
 
+/* ------------------------- */
+/* Header                    */
+/* ------------------------- */
 header {
-    background: #f5f5f5;
-    padding: 10px 20px;
-    text-align: center;
+  background: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 header h1 {
-    color: black;
-    margin: 0;
+  color: #000;
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header nav {
+  align-self: flex-end;
 }
 
 header nav a {
-    margin: 0 15px;
-    color: black;
-    text-decoration: none;
+  margin: 0 15px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
+header nav a:hover {
+  color: #555;
+}
+
+/* ------------------------- */
+/* Main content              */
+/* ------------------------- */
 main {
+  padding: 40px 80px;
+}
+
+/* ------------------------- */
+/* Produkt grid layout       */
+/* ------------------------- */
+.produkt_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+/* Billeddel */
+.produkt_billede img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tekstdel */
+.produkt_tekst {
+  text-align: left;
+}
+
+.produkt_tekst h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.produkt_tekst h3 {
+  margin: 15px 0 5px;
+  font-size: 1.2em;
+}
+
+.produkt_tekst p {
+  margin: 0 0 15px;
+  line-height: 1.5;
+}
+
+/* Brand-info (eksempel: NIKE) */
+.nike h2 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #000;
+}
+
+.nike p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* ------------------------- */
+/* Basket / Add-to-Basket    */
+/* ------------------------- */
+.basket {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.h22 {
+  text-align: left;
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #000;
+}
+
+.p2 {
+  text-align: left;
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Størrelsesvalg */
+.size {
+  margin-bottom: 20px;
+}
+
+.size label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#size {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 120px;
+}
+
+/* "Add to Basket"-knap */
+.kurv {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 600;
+ 
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.kurv:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ------------------------- */
+/* Responsivt design         */
+/* ------------------------- */
+@media (max-width: 768px) {
+  main {
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+    margin: 0 20px;
+  }
 
-.product-container {
-    display: flex;
-    align-items: start;
-    gap: 20px;
-}
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.product-image img {
-    width: 100%;
-    max-width: 400px;
-}
+  header nav {
+    margin-top: 10px;
+  }
 
-.product-details {
-    flex-grow: 1;
-}
-
-.breadcrumbs {
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.brand-info h3,
-.product-details h2 {
-    margin-top: 0;
-}
-
-.purchase-info {
-    margin-top: 20px;
-}
-
-label {
-    margin-right: 10px;
-}
-
-select {
-    padding: 5px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #0084ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  header h1 {
+    font-size: 2em;
+  }
 }

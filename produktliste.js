@@ -1,27 +1,24 @@
-const productContainer = document.querySelector(".productContainer");
-const productId = 1530;
-fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
-  .then((response) => response.json())
-  .then((data) => {
-    productContainer.innerHTML = `
-    <figure>
-        <img
-          src="https://kea-alt-del.dk/t7/images/webp/640/${dataId}.webp
-"
-          alt="Produktbillede"
-          class="productImage"
-        />
-        <span class="saleLabel">Udsalg!</span>
-      </figure>
-      <section class="productDetails">
-        <h2 class="productName">Produktnavn</h2>
-        <div>
-        <p class="articleType"><span class="bold">Type:</span> ${data.articletype}</p>
-          <p class="productCategory"><span class="bold">Kategori:</span> ${data.category}</p>
-          <p class="productPrice"><span class="bold">Pris:</span> ${data.price},-</p>
-        </div>
-        <button class="buyButton">Køb nu</button>
-      </section>
-    `;
-  });
+console.log("sceipt hentet");
 
+const div = document.querySelector(".product_list_container"); 
+fetch('https://kea-alt-del.dk/t7/api/products?limit=100')
+
+.then((Response) => Response.json())
+.then(showList); 
+function showList(products){
+    console.log(products); //man kan også skrive data i stedet for products//
+let markup ="";
+ products.map((product)=> {
+    markup += `<div class="product_card available">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp
+" alt="Sahara Team India Fanwear" />
+    <h3> ${product.productdisplayname}</h3>
+    <p> ${product.articletype} | ${product.brandname}</p>
+    <p>DKK ${product.price},-</p>
+    <a href="produkt.html?id=/${product.id}" class="button">Read More</a>
+  </div>`
+})
+.join(""); 
+console.log(markup);
+div.innerHTML = markup;
+}

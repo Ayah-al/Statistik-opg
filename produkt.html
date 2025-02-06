@@ -1,52 +1,57 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
-    <title>Product details</title>
+    <title>Produkt</title>
     <link rel="stylesheet" href="produkt.css" />
   </head>
   <body>
     <header>
-      <h1>Fashion<span style="color: red">R</span>Us</h1>
-      <nav>
+      <nav class="menu">
         <a href="index.html">Categories</a>
         <a href="index.html">Brands</a>
         <a href="index.html">Seasons</a>
       </nav>
+      <h1>Fashion<span style="color: red">R</span>Us</h1>
     </header>
-    <main>
-      <div class="product-container">
-        <div class="product-image">
-          <img
-            src="IMG/SaharaT-shirt.webp"
-            alt="Sahara Team India Fanwear Round Neck Jersey"
-          />
+    <main class="productContainer">
+      <div class="produkt_grid">
+        <div class="produkt_billede">
+          <img src="img/tshirt.webp" alt="Sahara Team India Fanwear" />
         </div>
-        <div class="product-details">
+        <div class="produkt_tekst">
           <h2>Product Information</h2>
-          <p>
-            <strong>Model name:</strong> Sahara Team India Fanwear Round Neck
-            Jersey
-          </p>
-          <p><strong>Color:</strong> Blue</p>
-          <p><strong>Inventory number:</strong> 1163</p>
-          <div class="brand-info">
-            <h3>Nike</h3>
-            <p>Nike, creating experiences for today's athlete</p>
+          <h3>Model name</h3>
+          <p>Sahara Team India Fanwear Round Neck Jersey</p>
+          <h3>Color</h3>
+          <p>Blue</p>
+          <h3>Inventory number</h3>
+          <p>1163</p>
+          <div class="nike">
+            <h2>NIKE</h2>
+            <p>Nike, creating experiences for today's athelete</p>
           </div>
-          <div class="purchase-info">
-            <label for="size-select">Choose a size:</label>
-            <select id="size-select">
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
-            </select>
-            <button>Add to basket</button>
+        </div>
+        <div class="basket">
+          <h2 class="h22">Sahara Team India Fanwear Round Neck Jersey</h2>
+          <p class="p2">NIKE | T-shirts</p>
+          <div class="size">
+            <form action="/submit-size" method="post">
+              <label for="size">Select a size:</label>
+              <select id="size" name="size" required>
+                <option value="">--Select a size--</option>
+                <option value="small">S</option>
+                <option value="medium">M</option>
+                <option value="large">L</option>
+                <option value="xlarge">XL</option>
+              </select>
+            </form>
           </div>
+          <a href="basket.html" class="kurv"> Add to Basket</a>
         </div>
       </div>
     </main>
+    <script src="produkt.js"></script>
   </body>
 </html>
